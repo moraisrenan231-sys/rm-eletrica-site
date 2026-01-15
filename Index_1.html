@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&M Elétrica & Soluções | Promissão e Região</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Cores principais */
+        :root {
+            --primary: #0066CC; /* Azul elétrico */
+            --secondary: #FFD700; /* Amarelo */
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #6c757d;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-image {
+            background: linear-gradient(135deg, var(--primary), #004a99);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0,102,204,0.2);
+            line-height: 1.2;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .logo-rm {
+            font-size: 1.6rem;
+            font-weight: 800;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+            margin-bottom: 2px;
+        }
+        
+        .logo-text {
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text-container h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        
+        .logo-text-container span {
+            font-size: 1.1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .slogan {
+            color: var(--dark);
+            font-style: italic;
+            margin-top: 3px;
+            font-size: 0.95rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        nav ul li {
+            margin-left: 0;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .instagram-btn {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(195, 42, 163, 0.2);
+        }
+        
+        .instagram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(195, 42, 163, 0.3);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0052a3;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Seções gerais */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Serviços */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 15px;
+        }
+        
+        .service-card ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .service-card ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Sobre */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background-color: #f0f8ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Contato */
+        .contact {
+            background-color: #f8f9fa;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer-logo p {
+            color: #bbb;
+            font-style: italic;
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .social-icons a.instagram:hover {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Botões flutuantes WhatsApp e Telefone */
+        .float-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .float-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .float-phone {
+            background-color: var(--primary);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            nav ul {
+                margin-top: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+            
+            .hero {
+                padding: 80px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .float-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                padding-bottom: 60px;
+            }
+            
+            .logo {
+                flex-direction: row;
+                justify-content: center;
+                text-align: left;
+            }
+            
+            .logo-text-container h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .instagram-btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botões flutuantes WhatsApp e Telefone -->
+    <div class="float-buttons">
+        <a href="https://wa.me/5514991798868" class="float-btn float-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+5514991798868" class="float-btn float-phone">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <div class="logo-rm">R&M</div>
+                    <div class="logo-text">ELÉTRICA</div>
+                </div>
+                <div class="logo-text-container">
+                    <h1>R&M ELÉTRICA & SOLUÇÕES</h1>
+                    <span>Profissionalismo e qualidade em serviços elétricos</span>
+                    <p class="slogan">Ligando sua energia com confiança.</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/rm.eletricaesolucoes?igsh=MWsxZ2s1cnF0c2kyYg==" class="instagram-btn" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Serviços Elétricos Profissionais em Promissão e Região</h2>
+            <p>Instalações, reparos e manutenção elétrica com segurança, agilidade e garantia. Atendimento residencial e comercial.</p>
+            <div class="cta-buttons">
+                <a href="tel:+5514991798868" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> LIGAR AGORA: (14) 99179-8868
+                </a>
+                <a href="https://wa.me/5514991798868" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WHATSAPP
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instalações Elétricas</h3>
+                    <ul>
+                        <li>Instalação de luzes e tomadas</li>
+                        <li>Chuveiros e ventiladores</li>
+                        <li>Quadros de energia</li>
+                        <li>Reformas elétricas</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Reparos e Manutenção</h3>
+                    <ul>
+                        <li>Conserto de instalações</li>
+                        <li>Troca de fiação antiga</li>
+                        <li>Solução de curtos-circuitos</li>
+                        <li>Manutenção preventiva</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Serviços Residenciais</h3>
+                    <ul>
+                        <li>Elétrica para casas e apartamentos</li>
+                        <li>Instalação de lustres e ventiladores</li>
+                        <li>Tomadas para ar-condicionado</li>
+                        <li>Sistemas de aterramento</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Serviços Comerciais</h3>
+                    <ul>
+                        <li>Instalações para comércios</li>
+                        <li>Quadros de distribuição</li>
+                        <li>Iluminação comercial</li>
+                        <li>Sistemas trifásicos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>R&M Elétrica & Soluções</h3>
+                    <p>Somos uma empresa especializada em serviços elétricos residenciais e comerciais, atuando em <strong>Promissão e região</strong>. Sob a liderança do técnico <strong>Renan</strong>, oferecemos soluções completas com segurança, agilidade e compromisso.</p>
+                    
+                    <p>Nossa missão é garantir que sua instalação elétrica funcione perfeitamente, proporcionando conforto e segurança para sua família ou negócio.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Atendimento rápido e confiável</strong> - Resolvemos seu problema no menor tempo possível, com profissionalismo e garantia.</p>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Por que nos escolher?</h3>
+                    <ul style="list-style: none;">
+                        <li><strong>✓ Profissional Qualificado:</strong> Técnico especializado com experiência</li>
+                        <li><strong>✓ Atendimento Rápido:</strong> Resposta ágil para suas necessidades</li>
+                        <li><strong>✓ Transparência:</strong> Orçamentos claros e sem surpresas</li>
+                        <li><strong>✓ Garantia:</strong> Confiança nos serviços prestados</li>
+                        <li><strong>✓ Materiais de Qualidade:</strong> Utilizamos produtos certificados</li>
+                        <li><strong>✓ Área de Atuação:</strong> Atendemos Promissão e toda a região</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Renan - Técnico Responsável</h4>
+                            <p>Especialista em serviços elétricos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Telefone / WhatsApp</h4>
+                            <p><strong>(14) 99179-8868</strong></p>
+                            <p>Atendimento rápido e direto</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Área de Atuação</h4>
+                            <p><strong>Promissão - SP e região</strong></p>
+                            <p>Atendemos cidades vizinhas e zona rural</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 18h</p>
+                            <p>Sábado: 8h às 12h</p>
+                            <p><em>Plantão para emergências</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/rm.eletricaesolucoes?igsh=MWsxZ2s1cnF0c2kyYg==" class="instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Solicite um Orçamento</h3>
+                    <p>Preencha o formulário abaixo e entraremos em contato rapidamente!</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Tipo de Serviço</label>
+                            <select id="service" class="form-control">
+                                <option value="">Selecione um serviço</option>
+                                <option value="instalacao">Instalação Elétrica</option>
+                                <option value="reparo">Reparo / Manutenção</option>
+                                <option value="residencial">Serviço Residencial</option>
+                                <option value="comercial">Serviço Comercial</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Descrição do Serviço *</label>
+                            <textarea id="message" class="form-control" required placeholder="Descreva o que você precisa..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> ENVIAR SOLICITAÇÃO
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>R&M ELÉTRICA & SOLUÇÕES</h3>
+                    <p>Ligando sua energia com confiança.</p>
+                    <p>Profissionalismo e qualidade em serviços elétricos para sua residência ou comércio.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (14) 99179-8868</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Promissão - SP e região</p>
+                    <p><i class="fas fa-clock"></i> Seg-Sex: 8h-18h | Sáb: 8h-12h</p>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/rm.eletricaesolucoes?igsh=MWsxZ2s1cnF0c2kyYg==" class="instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5514991798868" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 R&M Elétrica & Soluções. Todos os direitos reservados.</p>
+                <p>Site desenvolvido para oferecer soluções elétricas com qualidade e segurança.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link (em dispositivos móveis)
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 576) {
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+        
+        // Formulário de contato (simulação)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Criar mensagem para WhatsApp
+            const whatsappMessage = `Olá! Me chamo ${name}. Gostaria de um orçamento para: ${message}. ${service ? `Serviço: ${document.getElementById('service').options[document.getElementById('service').selectedIndex].text}` : ''}. Telefone: ${phone}`;
+            
+            // Codificar a mensagem para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Redirecionar para WhatsApp
+            window.open(`https://wa.me/5514991798868?text=${encodedMessage}`, '_blank');
+            
+            // Resetar formulário
+            document.getElementById('contactForm').reset();
+            
+            // Feedback visual
+            alert('Você será redirecionado para o WhatsApp para enviar sua solicitação!');
+        });
+        
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
